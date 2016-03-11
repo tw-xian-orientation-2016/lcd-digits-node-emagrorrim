@@ -1,0 +1,22 @@
+{
+  "name": "lcd-digits-node-emagrorrim",
+  "version": "0.0.0",
+  "description": "lcd-digits",
+  "main": "main.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emagrorrim/lcd-digits-node-emagrorrim.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emagrorrim/lcd-digits-node-emagrorrim/issues"
+  },
+  "homepage": "https://github.com/emagrorrim/lcd-digits-node-emagrorrim#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
+}
