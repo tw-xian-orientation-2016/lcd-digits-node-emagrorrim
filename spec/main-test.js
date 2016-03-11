@@ -1,5 +1,5 @@
 'use strict';
-var main = require('../main');
+let main = require('../main');
 
 describe('lcd-digits-main', () => {
 

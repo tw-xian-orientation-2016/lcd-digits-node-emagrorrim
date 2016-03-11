@@ -1,6 +1,6 @@
 'use strict';
-var lcd = require('../lcd-digits');
-var fixtures = require('./fixtures');
+let lcd = require('../lcd-digits');
+let fixtures = require('./fixtures');
 
 describe('splitNumber()', () => {
   let input;
