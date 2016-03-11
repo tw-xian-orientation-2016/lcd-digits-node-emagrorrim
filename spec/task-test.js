@@ -1,54 +1,55 @@
+'use strict';
 var lcd = require('../lcd-digits');
 var fixtures = require('./fixtures');
 
-describe('splitNumber()', function() {
-  var input;
+describe('splitNumber()', () => {
+  let input;
 
-  beforeEach(function() {
+  beforeEach(() => {
     input = '910';
   });
 
-  it('should split number into digits', function() {
+  it('should split number into digits', () => {
 
-    var output = lcd.splitNumber(input);
+    let output = lcd.splitNumber(input);
 
-    var expectResult = ['9', '1', '0'];
+    let expectResult = ['9', '1', '0'];
 
     expect(output).toEqual(expectResult);
   });
 });
 
-describe('convertToLCD()', function() {
-  var input;
-  var lcdNumbers;
+describe('convertToLCD()', () => {
+  let input;
+  let lcdNumbers;
 
-  beforeEach(function() {
+  beforeEach(() => {
     input = ['9', '1', '0'];
     lcdNumbers = fixtures.loadLCDNumbers();
   });
 
-  it('should convert str number to lcd number', function() {
+  it('should convert str number to lcd number', () => {
 
-    var output = lcd.convertToLCD(input, lcdNumbers);
+    let output = lcd.convertToLCD(input, lcdNumbers);
 
-    var expectResult = ['._.|_|..|', '.....|..|', '._.|.||_|'];
+    let expectResult = ['._.|_|..|', '.....|..|', '._.|.||_|'];
 
     expect(output).toEqual(expectResult);
   });
 });
 
-describe('splitInLine()', function() {
-  var input;
+describe('splitInLine()', () => {
+  let input;
 
-  beforeEach(function() {
+  beforeEach(() => {
     input = ['._.|_|..|', '.....|..|', '._.|.||_|'];
   });
 
-  it('should split lcd number in line', function() {
+  it('should split lcd number in line', () => {
 
-    var output = lcd.splitInLine(input);
+    let output = lcd.splitInLine(input);
 
-    var expectResult = [
+    let expectResult = [
       ['._.', '...', '._.'],
       ['|_|', '..|', '|.|'],
       ['..|', '..|', '|_|']
@@ -58,10 +59,10 @@ describe('splitInLine()', function() {
   });
 });
 
-describe('join()', function() {
-  var input;
+describe('join()', () => {
+  let input;
 
-  beforeEach(function() {
+  beforeEach(() => {
     input = [
       ['._.', '...', '._.'],
       ['|_|', '..|', '|.|'],
@@ -69,11 +70,11 @@ describe('join()', function() {
     ];
   });
 
-  it('should join lcd number in line', function() {
+  it('should join lcd number in line', () => {
 
-    var output = lcd.join(input);
+    let output = lcd.join(input);
 
-    var expectResult = [
+    let expectResult = [
       '._. ... ._.\n',
       '|_| ..| |.|\n',
       '..| ..| |_|\n'
@@ -83,10 +84,10 @@ describe('join()', function() {
   });
 });
 
-describe('show()', function() {
-  var input;
+describe('show()', () => {
+  let input;
 
-  beforeEach(function() {
+  beforeEach(() => {
     input = [
       '._. ... ._.\n',
       '|_| ..| |.|\n',
@@ -94,13 +95,13 @@ describe('show()', function() {
     ];
   });
 
-  it('should split lcd number in line', function() {
+  it('should split lcd number in line', () => {
 
     spyOn(console, 'log');
 
-    var output = lcd.show(input);
+    let output = lcd.show(input);
 
-    var expectResult = '._. ... ._.\n'
+    let expectResult = '._. ... ._.\n'
                       +'|_| ..| |.|\n'
                       +'..| ..| |_|\n';
 

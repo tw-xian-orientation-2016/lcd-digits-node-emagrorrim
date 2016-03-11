@@ -1,21 +1,22 @@
+'use strict';
 function splitNumber(number) {
   number = '' + number;
   return number.split('');
 }
 
 function convertToLCD(digits, lcdNumbers) {
-  var lcdShownNumbers = [];
+  let lcdShownNumbers = [];
   digits.forEach(function(digit) {
-    var lcdNumber = lcdNumbers[parseInt(digit)];
+    let lcdNumber = lcdNumbers[parseInt(digit)];
     lcdShownNumbers.push(lcdNumber);
   });
   return lcdShownNumbers;
 }
 
 function splitInLine(lcdShownNumbers) {
-  var firstLineStrings = [];
-  var secondLineStrings = [];
-  var thirdLineStrings = [];
+  let firstLineStrings = [];
+  let secondLineStrings = [];
+  let thirdLineStrings = [];
   lcdShownNumbers.forEach(function(lcdShownNumber) {
      firstLineStrings.push(lcdShownNumber.substr(0, 3));
      secondLineStrings.push(lcdShownNumber.substr(3, 3));
@@ -25,11 +26,11 @@ function splitInLine(lcdShownNumbers) {
 }
 
 function join(lineStrings) {
-  var stringLines = [];
+  let stringLines = [];
   lineStrings.forEach(function(lineStringArr) {
-    var stringLine = '';
-    for (var i = 0; i < lineStringArr.length; i++) {
-      var tailStr =  (i === lineStringArr.length - 1) ? '\n': ' ';
+    let stringLine = '';
+    for (let i = 0; i < lineStringArr.length; i++) {
+      let tailStr =  (i === lineStringArr.length - 1) ? '\n': ' ';
       stringLine += (lineStringArr[i] + tailStr);
     }
     stringLines.push(stringLine);
@@ -38,7 +39,7 @@ function join(lineStrings) {
 }
 
 function show(stringLines) {
-  var lcdNumberStr = '';
+  let lcdNumberStr = '';
   stringLines.forEach(function(stringLine) {
     lcdNumberStr += stringLine;
   });

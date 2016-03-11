@@ -1,16 +1,16 @@
+'use strict';
 var main = require('../main');
 
-describe('lcd-digits-main', function() {
+describe('lcd-digits-main', () => {
 
-  it('should show lcd-number', function() {
-
+  it('should show lcd-number', () => {
     spyOn(console, 'log');
 
-    var number = 124;
+    let number = 124;
 
     main.main(number);
 
-    var expectNumber = '... ._. ...\n..| ._| |_|\n..| |_. ..|\n';
+    let expectNumber = '... ._. ...\n..| ._| |_|\n..| |_. ..|\n';
 
     expect(console.log).toHaveBeenCalledWith(expectNumber);
   });
